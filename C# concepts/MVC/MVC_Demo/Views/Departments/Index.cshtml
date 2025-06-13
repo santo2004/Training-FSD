@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Department"] = "Department";
+}
+@model MVC_Demo.Models.Department;
+
+@*
+<div>
+    <p>
+        <h1>Department Info</h1>
+    </p>
+    <br>
+    <h3>USING VIEW DATA AND VIEW BAG</h3>
+    <h4>Name: @ViewData["Name"]</h4>
+    <h5>Company: @ViewBag.Company</h5>
+    <br>
+    <h6>Strongly Typed</h6>
+    <p>ID : @Model.Id</p>
+    <p>Name : @Model.Name</p>
+    <p>Location : @Model.Location</p>
+</div>
+*@
+
+<h3>list of department :</h3>
+<table>
+    <thead>
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Location </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dept in Model)
+        {
+
+            <tr>
+                <td>@dept.Id</td>
+                <td>@dept.Name</td>
+                <td>@dept.Location</td>
+            </tr>
+        }
+    </tbody>
+</table>
