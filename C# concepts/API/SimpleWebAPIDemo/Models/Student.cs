@@ -9,5 +9,8 @@ namespace SimpleWebAPIDemo.Models
         public string StudentName { get; set; }
         public string StudentEmail { get; set; }
         public string Course { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public string City { get; set; }
     }
 }
