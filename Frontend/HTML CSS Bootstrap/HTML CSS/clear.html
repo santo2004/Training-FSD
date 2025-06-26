@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float Example</title>
+  <style>
+    .left { float: left; width: 45%; background: #fdd; padding: 10px; }
+    .right { float: right; width: 45%; background: #ddf; padding: 10px; }
+    .clearfix::after { content: "clearfix content"; display: table; clear: both; }
+  </style>
+</head>
+<body>
+  <div class="clearfix">
+    <div class="left">Left box</div>
+    <div class="right">Right box</div>
+  </div>
+</body>
+</html>
