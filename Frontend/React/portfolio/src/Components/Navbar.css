@@ -1,0 +1,42 @@
+/* Full-width navbar */
+.navbar {
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Container to center and arrange items */
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Button styles */
+.nav-btn {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #00ffff;
+  color: black;
+}
+
+.nav-btn.active {
+  background-color: #00ffff;
+  color: black;
+}
