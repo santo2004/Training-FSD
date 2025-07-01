@@ -36,7 +36,7 @@ function CourseList() {
 
     const filteredCourses = courses.filter((course) => course.price>10);
 
-    const courseList = filteredCourses.map(
+    const courseList = courses.map(
         (course,index) => 
         <Course
         key = {index}
