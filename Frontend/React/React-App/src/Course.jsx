@@ -1,6 +1,8 @@
-const course1="HTML Basics";
+// import HTML from './assets/HTML.png';
 
-function Course()
+// const course1="HTML Basics";
+
+function Course(props)
 {
 
     // const styles={
@@ -9,11 +11,19 @@ function Course()
     
     return (
         <>
-            <img src="https://www.shutterstock.com/image-vector/html-coding-symbols-260nw-797760319.jpg" alt=""/>
-            <h4>{course1}</h4>
-            <p>This is HTML course</p>
+            <div className="card">
+                <img src={props.image} alt=""/>
+                <h4>{props.name}</h4>
+                <p>{props.price}</p>
+            </div>
         </>
     );
 }
+
+// Course.defaultProps = {
+//     name : "Course name",
+//     price: "$100",
+//     image: HTML
+// }
 
 export default Course
