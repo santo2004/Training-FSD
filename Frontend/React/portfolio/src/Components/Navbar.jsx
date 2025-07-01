@@ -1,16 +1,41 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-content">
-        <NavLink to="/home" className={({ isActive }) => isActive ? 'nav-btn active' : 'nav-btn'}>
+        <button
+          className={`nav-btn ${location.pathname === '/home' ? 'active' : ''}`}
+          onClick={() => handleNavigation('/home')}
+        >
           Home
-        </NavLink>
-        <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-btn active' : 'nav-btn'}>
+        </button>
+        <button
+          className={`nav-btn ${location.pathname === '/about' ? 'active' : ''}`}
+          onClick={() => handleNavigation('/about')}
+        >
           About
-        </NavLink>
+        </button>
+        <button
+          className={`nav-btn ${location.pathname === '/projects' ? 'active' : ''}`}
+          onClick={() => handleNavigation('/projects')}
+        >
+          Projects
+        </button>
+        <button
+          className={`nav-btn ${location.pathname === '/contact' ? 'active' : ''}`}
+          onClick={() => handleNavigation('/contact')}
+        >
+          Contact
+        </button>
       </div>
     </nav>
   );

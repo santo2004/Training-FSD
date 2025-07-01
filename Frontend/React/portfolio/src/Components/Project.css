@@ -1,0 +1,17 @@
+.projects-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.projects-card {
+    background-color: #f5f5dc;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+}
+
+.projects-card ul {
+    padding-left: 20px;
+    line-height: 2;
+}

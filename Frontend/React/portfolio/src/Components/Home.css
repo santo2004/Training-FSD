@@ -1,50 +1,26 @@
-/* Wrapper to center content and align from top */
 .home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;       /* Align from the top */
-  padding-top: 100px;            /* Matches About page */
-  padding-bottom: 50px;
-  background-color: #f5f5f5;
-  min-height: 100vh;             /* Ensures full height for scroll */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-/* Card container */
 .home-card {
-  display: flex;
-  width: 80%;
-  max-width: 1000px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    background-color: #f0f8ff;
+    border-radius: 15px;
 }
 
-/* Left side - text section */
 .home-text {
-  flex: 3;
-  padding: 30px;
-  background-color: #e6f7ff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+    max-width: 400px;
 }
 
-/* Right side - image section */
-.home-image {
-  flex: 2;
-  background-color: #d9d9d9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Image styling */
 .home-image img {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
 }
-

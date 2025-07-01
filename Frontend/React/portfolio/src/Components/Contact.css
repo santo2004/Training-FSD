@@ -1,12 +1,13 @@
-.about-wrapper {
+.contact-wrapper {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-.about-card {
-    background-color: #ffe4e1;
+.contact-card {
+    background-color: #e0ffff;
     padding: 30px;
     border-radius: 15px;
-    max-width: 600px;
+    max-width: 500px;
+    text-align: center;
 }

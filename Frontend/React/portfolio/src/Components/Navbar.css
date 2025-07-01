@@ -1,42 +1,31 @@
-/* Full-width navbar */
 .navbar {
-  width: 100%;
-  background-color: #1e1e1e;
-  padding: 10px 20px;
-  margin-top: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-/* Container to center and arrange items */
-.navbar-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: #333;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
-  gap: 2rem;
 }
 
-/* Button styles */
+.navbar-content {
+  display: flex;
+  gap: 20px;
+}
+
 .nav-btn {
-  background-color: transparent;
-  border: 2px solid #00ffff;
+  background-color: #555;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .nav-btn:hover {
-  background-color: #00ffff;
-  color: black;
+  background-color: #777;
 }
 
 .nav-btn.active {
-  background-color: #00ffff;
-  color: black;
+  background-color: #008cba;
+  font-weight: bold;
 }
