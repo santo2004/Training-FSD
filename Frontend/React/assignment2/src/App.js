@@ -1,29 +1,57 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import BookAppointment from './components/BookAppointment';
+import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Departments from './pages/Departments';
-import Doctors from './pages/Doctors';
-import BookAppointment from './pages/BookAppointment';
-import Dashboard from './pages/Dashboard';
-import NotFound from './pages/NotFound';
-import './App.css';
+import { UserProvider, useUserContext } from './components/UserContext';
+import ProtectedRoute from './components/ProtectedRoute';
+
+function AppWrapper() {
+  const location = useLocation();
+  const { user } = useUserContext();
+
+  const onLoginPage = location.pathname === '/' || location.pathname === '/login';
+
+  return (
+    <>
+      {user && !onLoginPage && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/book"
+          element={
+            <ProtectedRoute>
+              <BookAppointment />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/departments" element={<Departments />} />
-          <Route path="/departments/:id/doctors" element={<Doctors />} />
-          <Route path="/book" element={<BookAppointment />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+    <UserProvider>
+      <Router>
+        <AppWrapper />
+      </Router>
+    </UserProvider>
   );
 }
 

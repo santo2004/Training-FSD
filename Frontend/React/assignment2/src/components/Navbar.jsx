@@ -1,13 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useUserContext } from './UserContext';
 
 function Navbar() {
+  const { user } = useUserContext();
+
   return (
     <nav className="navbar">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/departments">Departments</NavLink>
-      <NavLink to="/book">Book Appointment</NavLink>
-      <NavLink to="/dashboard">Dashboard</NavLink>
+      {user ? (
+        <>
+          <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink>
+          <NavLink to="/book" className={({ isActive }) => isActive ? 'active' : ''}>Book</NavLink>
+        </>
+      ) : (
+        <NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
+      )}
     </nav>
   );
 }
