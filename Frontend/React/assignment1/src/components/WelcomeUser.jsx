@@ -1,9 +1,9 @@
 import React from 'react';
 
-function WelcomeUser({ isLoggedIn, name }) {
+function WelcomeUser(props) {
   return (
     <div className="message">
-      {isLoggedIn ? <h3>Welcome back, {name}!</h3> : <h3>Please log in</h3>}
+      {props.isLoggedIn ? <h3>Welcome back, {props.name}!</h3> : <h3>Please log in</h3>}
     </div>
   );
 }

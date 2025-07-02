@@ -11,18 +11,24 @@ function App() {
       <section>
         <ProfileCard
           name="Santo Allen"
-          title="Trainee"
-          imageUrl="https://png.pngtree.com/png-clipart/20230930/original/pngtree-man-avatar-isolated-png-image_13022170.png"
+          role="Trainee"
+          url="https://png.pngtree.com/png-clipart/20230930/original/pngtree-man-avatar-isolated-png-image_13022170.png"
         />
       </section>
       <section>
-        <WelcomeUser isLoggedIn={true} name="Santo" />
+        <WelcomeUser 
+          isLoggedIn={true}   
+          name="Santo" />
       </section>
       <section>
-        <ProductPrice name="Laptop" price={55000} quantity={2} />
+        <ProductPrice 
+          name="Laptop"   
+          rate={55000} 
+          quantity={2} />
       </section>
       <section>
-        <SkillList skills={['React', 'CSS', 'JavaScript', 'HTML']} />
+        <SkillList 
+          skills={['React', 'CSS', 'JavaScript', 'HTML']} />
       </section>
     </div>
   );
