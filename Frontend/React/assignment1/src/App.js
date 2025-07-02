@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
+import ProfileCard from './components/ProfileCard';
+import WelcomeUser from './components/WelcomeUser';
+import ProductPrice from './components/ProductPrice';
+import SkillList from './components/SkillList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <section>
+        <ProfileCard
+          name="Santo Allen"
+          title="Trainee"
+          imageUrl="https://png.pngtree.com/png-clipart/20230930/original/pngtree-man-avatar-isolated-png-image_13022170.png"
+        />
+      </section>
+      <section>
+        <WelcomeUser isLoggedIn={true} name="Santo" />
+      </section>
+      <section>
+        <ProductPrice name="Laptop" price={55000} quantity={2} />
+      </section>
+      <section>
+        <SkillList skills={['React', 'CSS', 'JavaScript', 'HTML']} />
+      </section>
     </div>
   );
 }
