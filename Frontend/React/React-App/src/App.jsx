@@ -1,10 +1,10 @@
 import './App.css'
-import Course from './Course';
+// import Course from './Course';
 // import Footer from './Footer';
 // import Navbar from './Navbar';
-import HTML from './assets/HTML.png';
-import CSS from './assets/CSS.png';
-import JS from './assets/JS.png'; 
+// import HTML from './assets/HTML.png';
+// import CSS from './assets/CSS.png';
+// import JS from './assets/JS.png'; 
 import CourseList from './CourseList';
 
 function App() 

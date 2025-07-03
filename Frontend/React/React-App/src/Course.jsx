@@ -22,6 +22,7 @@ function Course(props)
             <p>{props.price}</p>
             {/* <p>{discount}</p> */}
             <button onClick = { ()=> BuyCourse(20) }>Buy Now</button>
+            <button onClick = { () => props.del(props.id) }>Delete</button>
             <p>{purchased}</p>
         </div>
     );

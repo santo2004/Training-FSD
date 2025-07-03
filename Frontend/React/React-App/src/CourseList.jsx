@@ -1,55 +1,47 @@
-import html from './assets/HTML.png';
-import css from './assets/CSS.png';
-import js from './assets/JS.png';
 import Course from './Course';
+import { useEffect, useState } from 'react';
 
 function CourseList() {
     
-    const courses =[
-        {
-            // id:1,
-            name: "HTML Basics",
-            price: 10,
-            image: html,
-            rating : 4.5
-        },
-        {
-            // id:2,
-            name: "CSS Fundamentals",
-            price: 15,
-            image: css,
-            rating : 4.0
-        },
-        {
-            //id:3,
-            name: "JavaScript Essentials",
-            price: 20,
-            image: js,
-            rating : 4.8
-        },
-        {
-        }
-    ]
+    const [courses,setCourses] = useState(null);
 
-    courses.sort((a,b) => b.price - a.price); //descending order by price
+    const [dummy,setDummy] = useState(false);
+
+    useEffect( () => {
+        fetch('https://localhost:3000')
+        .then( response => {
+            //console.log(response);
+            return response.json()
+        }).then (data => setCourses(data))
+    },[]);     //can make dependency array like '[dummy]' '[courses]' or '[]' for no dependency
+
+    function handleDelete(id) {
+        const newCourses = courses.filter((course) => course.id != id);
+        setCourses(newCourses);
+    }
+
+    //courses.sort((a,b) => b.price - a.price); //descending order by price
     // courses.sort((a,b) => a.rating - b.rating); //ascending order by rating
 
     const filteredCourses = courses.filter((course) => course.price>10);
 
     const courseList = courses.map(
-        (course,index) => 
+        (course) => 
         <Course
-        key = {index}
+        key = {course.id}
         name = {course.name}
         price = {course.price}
         image = {course.image}
-        rating = {course.rating}
+        // rating = {course.rating}
+        del={handleDelete}
+        id={course.id}
         />
     )
 
     return(
         <>
             {courseList}
+            <button onClick = { () => {setDummy(true)}}>Dummy</button>
         </>
     );
 }

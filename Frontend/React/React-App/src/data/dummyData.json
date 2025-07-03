@@ -1,0 +1,32 @@
+{
+    "courses" : [
+        {
+            "id":1,
+            "name": "HTML Basics",
+            "price": 10,
+            "image": "/images/html.png",
+            "rating" : 4.5
+        },
+        {
+            "id":2,
+            "name": "CSS Fundamentals",
+            "price": 15,
+            "image": "/images/css.png",
+            "rating" : 4.0
+        },
+        {
+            "id":3,
+            "name": "JavaScript Essentials",
+            "price": 20,
+            "image": "/images/js.png",
+            "rating" : 4.8
+        },
+        {
+            "id":4,
+            "name": "React for Beginners",
+            "price": 25,
+            "image": "/images/js.png",
+            "rating" : 4.9
+        }
+    ]}
+}
